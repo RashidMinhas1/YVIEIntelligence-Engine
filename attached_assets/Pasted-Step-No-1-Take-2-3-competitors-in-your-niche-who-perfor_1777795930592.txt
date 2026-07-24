@@ -1,0 +1,65 @@
+Step No. 1. Take 2-3 competitors in your niche. who performed well and fulfilled the criteria.
+Step No. 2—Open the latest 10 videos into different tabs for all competitors. 3 competitors 3 different browsers, and 10 latest video tabs open each tab
+Step No. 3: Open ChatGPT and get first 7 video titles for your channel
+Paste the titles, 21 total tiles, along with this prompt.
+
+prompt.
+Analyze these titles very, very critically. Act like an expert faceless YouTuber who has a lot of successful faceless YouTube channels and is getting millions of views. Also extract the following things from these 7 titles:
+Format of the title
+Why their titles are winning.
+what the keyword in the title is, making an import with their appropriate portion, the length of the character, and, the importance of main, secondary and 
+The vocabulary keywords are the titles. Here are the titles (paste the titles).
+
+After putting in this prompt you will get a result, and after this, use this prompt
+prompt.
+Okay, Now on the basis of final formula and what you analyzed Give me 5 titles for my YT channel. My script copying the competitor's so I need the title on the same subject
+
+Step No. 4: Wow, you need the script format. Go to your competitor, which you used for the selection of titles. Select the video from the latest 7 videos that has the most views among all. Copy the link, go to  genelify upload link, and copy the script. Go to ChatGPT. Paste the script with the upload on this prompt:
+prompt.
+Analyze the script very critically, act like expert youtube script writer who have written thousand of scripts and gotten millions of views. Also Extract the following things from the
+Script.
+Tone of the Script
+Mood of the Script
+Why Hook is so perfect: Because the channel is getting huge viewership with only (NO. OF VIDEOS) videos, give me 5 key elements for LLM to generate a script in exactly the same format with strong retention keywords.
+  
+requirement of the saas 
+Step No. 1. Take 2-3 competitors in your niche. who performed well and fulfilled the criteria.
+Step No. 2—Open the latest 10 videos into different tabs for all competitors. 3 competitors 3 different browsers, and 10 latest video tabs open each tab
+Step No. 3: Open ChatGPT and get first 7 video titles for your channel
+Paste the titles, 21 total tiles, along with this prompt.
+
+prompt.
+Analyze these titles very, very critically. Act like an expert faceless YouTuber who has a lot of successful faceless YouTube channels and is getting millions of views. Also extract the following things from these 7 titles:
+Format of the title
+Why their titles are winning.
+what the keyword in the title is, making an import with their appropriate portion, the length of the character, and, the importance of main, secondary and 
+The vocabulary keywords are the titles. Here are the titles (paste the titles).
+
+After putting in this prompt you will get a result, and after this, use this prompt
+prompt.
+Okay, Now on the basis of final formula and what you analyzed Give me 5 titles for my YT channel. My script copying the competitor's so I need the title on the same subject
+
+Step No. 4: Wow, you need the script format. Go to your competitor, which you used for the selection of titles. Select the video from the latest 7 videos that has the most views among all. Copy the link, go to  genelify upload link, and copy the script. Go to ChatGPT. Paste the script with the upload on this prompt:
+prompt.
+Analyze the script very critically, act like expert youtube script writer who have written thousand of scripts and gotten millions of views. Also Extract the following things from the
+Script.
+Tone of the Script
+Mood of the Script
+Why Hook is so perfect: Because the channel is getting huge viewership with only (NO. OF VIDEOS) videos, give me 5 key elements for LLM to generate a script in exactly the same format with strong retention keywords.
+
+Ye oper wala text show ho saas mai 
+Ye user ab input dy ga 
+
+Template Requirement
+3 winning titles.Take the title you got in the previous copy, one of them, and go to a new window. Open GPT and paste the title and ask it to give you 3 more titles having the same format as the one I give you. Do not miss the important keywords and their position
+Hook overview: copy forms from the script that you get from your competitor. Copy only the first 200/350 words put into Hook.
+Script brief overview: your opinion about the script. Script ka jo format nikala tha usky baad ye paste karna hai for this requirement. Convert all this analysis and element into 4. Use sentences as a command for LLM.
+Target word Count: nearest to your competitor's script words 1 mint 200 words or more, 
+Sample words: copy and paste competitors' script words.
+
+In the last use of this prompt.
+prompt.
+This script is just the reference to extract the tone, hook, and engagement and how it has been written. Analyze this deeply and write a script on given title provided above if necessary. Do the deeply web research authentic data.
+      
+
+ye raha whole work along with prompts acha 5 points main hain unky nader jo likha wa hai wo instructions hain user ky liye 

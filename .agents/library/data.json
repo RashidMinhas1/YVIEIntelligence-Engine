@@ -1,0 +1,79 @@
+{
+  "titles": [
+    {
+      "id": "t1",
+      "patternName": "Rise & Fall",
+      "template": "The [POWER WORD] Rise & Fall of [SUBJECT]",
+      "psychologyFormula": "Curiosity Gap → Drama/Tragedy → Authority/Brand Recognition → Open Loop",
+      "hookType": "Chronological Story Hook",
+      "emotionalTrigger": "Shock, Curiosity, Schadenfreude",
+      "curiosityTrigger": "\"What caused the downfall?\"",
+      "bestNiches": [
+        "Business",
+        "History",
+        "Documentaries"
+      ],
+      "example": "The INSANE Rise & Fall of Blockbuster",
+      "notes": "Works best for massive companies or famous personalities that crashed hard."
+    },
+    {
+      "patternName": "Secret Identity",
+      "template": "The Secret Life of [SUBJECT]",
+      "psychologyFormula": "Curiosity Gap",
+      "hookType": "Intrigue",
+      "emotionalTrigger": "Curiosity",
+      "curiosityTrigger": "What are they hiding?",
+      "bestNiches": [
+        "History"
+      ],
+      "example": "The Secret Life of Einstein",
+      "notes": "Use for famous people",
+      "id": "t1783761355428"
+    },
+    {
+      "patternName": "The Predecessor Comparison",
+      "template": "[Subject] + [Intrigue/Descriptor] | [Comparison]",
+      "psychologyFormula": "Leveraging familiarity with modern icons to introduce historical counterparts.",
+      "hookType": "Comparative hook",
+      "emotionalTrigger": "Scandal, curiosity, social comparison",
+      "curiosityTrigger": "Implication of secrets",
+      "bestNiches": [
+        "Biography",
+        "History",
+        "Celebrity",
+        "Documentary"
+      ],
+      "example": "The SCANDALOUS Lives of the Gabor Sisters | The Original Kardashians",
+      "notes": "Creates an immediate point of reference using modern icons.",
+      "id": "t1783839613158"
+    }
+  ],
+  "scripts": [
+    {
+      "scriptFormatName": "Rise and Fall Tragic Heroine Documentary",
+      "hookFormula": "Familiar Modern Phenomenon + Introducing the Precursor + Dramatic Origin Story/Promise",
+      "introStructure": "Establish as historical precursors to modern celebrity culture, outline dramatic life trajectory, highlight key life events, promise nuanced exploration.",
+      "storyFlow": "Origin (Humble beginnings) -> Call to Adventure (Ambition) -> Trials (Marriages, war) -> Climax (Peak fame, scandals) -> Fall (Loss of self, decline)",
+      "retentionPattern": "Constant escalation of status interspersed with scandals.",
+      "curiosityLoops": [
+        "The price of fame",
+        "Secret motivations behind public personas"
+      ],
+      "emotionalBeats": [
+        "Awe",
+        "Scandal",
+        "Pity",
+        "Nostalgia"
+      ],
+      "ctaPlacement": "End of video reflecting on legacy",
+      "bestNiches": [
+        "Biography",
+        "History",
+        "Celebrity Documentary"
+      ],
+      "exampleStructure": "The Gabor Sisters: The Shocking Original Kardashians",
+      "id": "s1783839625555"
+    }
+  ],
+  "niches": []
+}

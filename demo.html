@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Viral Intelligence Engine - Local Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Home Page */
+        .home-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        
+        .home-card {
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+        }
+        
+        .home-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .home-subtitle {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .get-started-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .get-started-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Password Page */
+        .password-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        .password-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .password-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .password-subtitle {
+            font-size: 1em;
+            margin-bottom: 30px;
+            color: #666;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .login-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Dashboard */
+        .dashboard-page {
+            min-height: 100vh;
+            background: #f5f7fa;
+        }
+        
+        .dashboard-header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .dashboard-subtitle {
+            font-size: 1.1em;
+            color: #666;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .stat-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .recent-activity {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .activity-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .activity-list {
+            space-y: 15px;
+        }
+        
+        .activity-item {
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            background: #f8f9fa;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .activity-type {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .activity-label {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .activity-time {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 15px 25px;
+            border-radius: 10px;
+        }
+        
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #f0f2f5;
+            color: #667eea;
+        }
+        
+        .nav-link.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Utility classes */
+        .d-none { display: none; }
+        .text-center { text-align: center; }
+        .mb-4 { margin-bottom: 20px; }
+        .mt-8 { margin-top: 40px; }
+        
+        @media (max-width: 768px) {
+            .home-title { font-size: 2em; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .nav-links { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home-page" class="home-page">
+        <div class="home-card">
+            <h1 class="home-title">YouTube Viral Intelligence Engine</h1>
+            <p class="home-subtitle">A tool for analyzing viral YouTube videos and generating content for maximum engagement.</p>
+            <a href="#" onclick="navigateTo('password')" class="get-started-btn">Get Started</a>
+        </div>
+    </div>
+    
+    <!-- Password Page -->
+    <div id="password-page" class="password-page d-none">
+        <div class="password-card">
+            <h1 class="password-title">YouTube Viral Intelligence Engine</h1>
+            <p class="password-subtitle">Enter password to access the dashboard</p>
+            
+            <form id="password-form" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                    <div id="error-message" class="error-message">Invalid password</div>
+                </div>
+                
+                <button type="submit" class="login-btn">Access Dashboard</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Dashboard -->
+    <div id="dashboard-page" class="dashboard-page d-none">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">YouTube Viral Intelligence Engine</div>
+                <div class="nav-links">
+                    <a href="#" onclick="navigateTo('dashboard')" class="nav-link active">Dashboard</a>
+                    <a href="#" onclick="navigateTo('wizard')" class="nav-link">Wizard</a>
+                    <a href="#" onclick="navigateTo('library')" class="nav-link">Library</a>
+                    <a href="#" onclick="navigateTo('history')" class="nav-link">History</a>
+                    <a href="#" onclick="navigateTo('password')" class="nav-link">Logout</a>
+                </div>
+            </nav>
+            
+            <h1 class="dashboard-title">Dashboard</h1>
+            <p class="dashboard-subtitle">Overview of your viral video intelligence data</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h2 class="stat-title">Videos</h2>
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Competitor videos analyzed</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h2 class="stat-title">Title Analyses</h2>
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Titles analyzed with AI</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h2 class="stat-title">Script Analyses</h2>
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Scripts analyzed and optimized</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h2 class="stat-title">Generated Scripts</h2>
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Viral scripts created</div>
+                </div>
+            </div>
+            
+            <div class="recent-activity">
+                <h2 class="activity-title">Recent Activity</h2>
+                <div class="activity-list" id="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-type">No recent activity</div>
+                        <div class="activity-label">Start analyzing videos or generating content</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p style="color: #999; font-size: 0.9em;">YouTube Viral Intelligence Engine v1.0.0</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentUser = null;
+        
+        // Navigation function
+        function navigateTo(page) {
+            // Hide all pages
+            document.querySelectorAll('.home-page, .password-page, .dashboard-page').forEach(p => {
+                p.classList.add('d-none');
+            });
+            
+            // Show target page
+            if (page === 'home') {
+                document.getElementById('home-page').classList.remove('d-none');
+            } else if (page === 'password') {
+                document.getElementById('password-page').classList.remove('d-none');
+                // Clear form when going back to password page
+                document.getElementById('password-form').reset();
+                document.getElementById('error-message').classList.remove('show');
+            } else if (page === 'dashboard') {
+                document.getElementById('dashboard-page').classList.remove('d-none');
+                renderDashboard();
+            }
+            
+            // Update navigation active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event?.target?.classList?.add('active');
+        }
+        
+        // Login handler
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            if (password === 'RASHIDMINHAS') {
+                // Store authentication
+                localStorage.setItem('auth', 'true');
+                currentUser = { username: 'user', role: 'admin' };
+                
+                // Navigate to dashboard
+                navigateTo('dashboard');
+            } else {
+                // Show error message
+                errorMessage.textContent = 'Invalid password';
+                errorMessage.classList.add('show');
+                
+                // Clear password field
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        }
+        
+        // Check authentication on page load
+        function checkAuth() {
+            const isAuth = localStorage.getItem('auth') === 'true';
+            
+            if (isAuth) {
+                // User is authenticated, show dashboard
+                navigateTo('dashboard');
+            } else {
+                // User is not authenticated, show password page
+                navigateTo('password');
+            }
+        }
+        
+        // Render dashboard with sample data
+        function renderDashboard() {
+            const activityList = document.getElementById('activity-list');
+            
+            const activities = [
+                {
+                    type: 'script_generated',
+                    label: 'Generated script for video analysis',
+                    time: '2 minutes ago'
+                },
+                {
+                    type: 'title_analyzed', 
+                    label: 'Analyzed 3 titles for viral potential',
+                    time: '15 minutes ago'
+                },
+                {
+                    type: 'video_fetched',
+                    label: 'Fetched 7 videos from competitor channels',
+                    time: '1 hour ago'
+                }
+            ];
+            
+            if (activities.length === 0) {
+                activityList.innerHTML = `
+                    <div class="activity-item">
+                        <div class="activity-type">No recent activity</div>
+                        <div class="activity-label">Start analyzing videos or generating content</div>
+                    </div>
+                `;
+            } else {
+                activityList.innerHTML = activities.map(activity => `
+                    <div class="activity-item">
+                        <div class="activity-type">${activity.type.replace('_', ' ')}</div>
+                        <div class="activity-label">${activity.label}</div>
+                        <div class="activity-time">${activity.time}</div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        // Logout function
+        function logout() {
+            localStorage.removeItem('auth');
+            currentUser = null;
+            navigateTo('password');
+        }
+        
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuth();
+        });
+        
+        // Mock demo alert
+        setTimeout(() => {
+            console.log('Demo mode: Some features require backend integration');
+        }, 1000);
+    </script>
+</body>
+</html>

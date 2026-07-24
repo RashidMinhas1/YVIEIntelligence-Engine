@@ -1,0 +1,473 @@
+openapi: 3.1.0
+info:
+  title: Api
+  version: 0.1.0
+  description: YouTube Viral Intelligence Engine API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: videos
+    description: Competitor video operations
+  - name: titles
+    description: Title analysis and generation
+  - name: scripts
+    description: Script analysis and generation
+  - name: history
+    description: Saved history operations
+
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /videos/fetch:
+    post:
+      operationId: fetchCompetitorVideos
+      tags: [videos]
+      summary: Fetch latest videos from competitor channels
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FetchVideosBody"
+      responses:
+        "200":
+          description: Videos fetched successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FetchVideosResponse"
+
+  /videos:
+    get:
+      operationId: getVideos
+      tags: [videos]
+      summary: Get all saved competitor videos
+      parameters:
+        - name: competitor
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of videos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VideoListResponse"
+
+  /titles/analyze:
+    post:
+      operationId: analyzeTitles
+      tags: [titles]
+      summary: Analyze competitor titles with AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AnalyzeTitlesBody"
+      responses:
+        "200":
+          description: Title analysis result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TitleAnalysisResponse"
+
+  /titles/generate:
+    post:
+      operationId: generateTitles
+      tags: [titles]
+      summary: Generate viral titles based on analysis
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerateTitlesBody"
+      responses:
+        "200":
+          description: Generated titles
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GenerateTitlesResponse"
+
+  /scripts/analyze:
+    post:
+      operationId: analyzeScript
+      tags: [scripts]
+      summary: Analyze a competitor script with AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AnalyzeScriptBody"
+      responses:
+        "200":
+          description: Script analysis result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScriptAnalysisResponse"
+
+  /scripts/generate:
+    post:
+      operationId: generateScript
+      tags: [scripts]
+      summary: Generate a full YouTube script
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerateScriptBody"
+      responses:
+        "200":
+          description: Generated script
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GenerateScriptResponse"
+
+  /history/title-analyses:
+    get:
+      operationId: getTitleAnalyses
+      tags: [history]
+      summary: Get saved title analyses
+      responses:
+        "200":
+          description: List of title analyses
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TitleAnalysisListResponse"
+
+  /history/script-analyses:
+    get:
+      operationId: getScriptAnalyses
+      tags: [history]
+      summary: Get saved script analyses
+      responses:
+        "200":
+          description: List of script analyses
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScriptAnalysisListResponse"
+
+  /history/generated-scripts:
+    get:
+      operationId: getGeneratedScripts
+      tags: [history]
+      summary: Get saved generated scripts
+      responses:
+        "200":
+          description: List of generated scripts
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedScriptListResponse"
+
+  /stats/dashboard:
+    get:
+      operationId: getDashboardStats
+      tags: [history]
+      summary: Get dashboard summary stats
+      responses:
+        "200":
+          description: Dashboard stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardStats"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required: [status]
+
+    Video:
+      type: object
+      properties:
+        id:
+          type: integer
+        competitor:
+          type: string
+        title:
+          type: string
+        views:
+          type: string
+        url:
+          type: string
+        publishedAt:
+          type: string
+          nullable: true
+        thumbnailUrl:
+          type: string
+          nullable: true
+      required: [id, competitor, title, views, url]
+
+    FetchVideosBody:
+      type: object
+      properties:
+        competitors:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 3
+        youtubeApiKey:
+          type: string
+          nullable: true
+      required: [competitors]
+
+    FetchVideosResponse:
+      type: object
+      properties:
+        videos:
+          type: array
+          items:
+            $ref: "#/components/schemas/Video"
+        usedMockData:
+          type: boolean
+      required: [videos, usedMockData]
+
+    VideoListResponse:
+      type: object
+      properties:
+        videos:
+          type: array
+          items:
+            $ref: "#/components/schemas/Video"
+      required: [videos]
+
+    AnalyzeTitlesBody:
+      type: object
+      properties:
+        titles:
+          type: array
+          items:
+            type: string
+        outputMode:
+          type: string
+          enum: [docs, text]
+      required: [titles, outputMode]
+
+    TitleAnalysisResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        analysis:
+          type: string
+        outputMode:
+          type: string
+        createdAt:
+          type: string
+      required: [id, analysis, outputMode, createdAt]
+
+    TitleAnalysis:
+      type: object
+      properties:
+        id:
+          type: integer
+        titles:
+          type: array
+          items:
+            type: string
+        analysis:
+          type: string
+        outputMode:
+          type: string
+        createdAt:
+          type: string
+      required: [id, titles, analysis, outputMode, createdAt]
+
+    TitleAnalysisListResponse:
+      type: object
+      properties:
+        analyses:
+          type: array
+          items:
+            $ref: "#/components/schemas/TitleAnalysis"
+      required: [analyses]
+
+    GenerateTitlesBody:
+      type: object
+      properties:
+        analysis:
+          type: string
+        niche:
+          type: string
+          nullable: true
+        outputMode:
+          type: string
+          enum: [docs, text]
+      required: [analysis, outputMode]
+
+    GenerateTitlesResponse:
+      type: object
+      properties:
+        titles:
+          type: array
+          items:
+            type: string
+        explanation:
+          type: string
+      required: [titles, explanation]
+
+    AnalyzeScriptBody:
+      type: object
+      properties:
+        script:
+          type: string
+        outputMode:
+          type: string
+          enum: [docs, text]
+      required: [script, outputMode]
+
+    ScriptAnalysisResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        analysis:
+          type: string
+        outputMode:
+          type: string
+        createdAt:
+          type: string
+      required: [id, analysis, outputMode, createdAt]
+
+    ScriptAnalysis:
+      type: object
+      properties:
+        id:
+          type: integer
+        scriptPreview:
+          type: string
+        analysis:
+          type: string
+        outputMode:
+          type: string
+        createdAt:
+          type: string
+      required: [id, scriptPreview, analysis, outputMode, createdAt]
+
+    ScriptAnalysisListResponse:
+      type: object
+      properties:
+        analyses:
+          type: array
+          items:
+            $ref: "#/components/schemas/ScriptAnalysis"
+      required: [analyses]
+
+    GenerateScriptBody:
+      type: object
+      properties:
+        title:
+          type: string
+        scriptAnalysis:
+          type: string
+          nullable: true
+        targetWordCount:
+          type: integer
+          nullable: true
+        outputMode:
+          type: string
+          enum: [docs, text]
+      required: [title, outputMode]
+
+    GenerateScriptResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        script:
+          type: string
+        wordCount:
+          type: integer
+        outputMode:
+          type: string
+        createdAt:
+          type: string
+      required: [id, title, script, wordCount, outputMode, createdAt]
+
+    GeneratedScript:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        script:
+          type: string
+        wordCount:
+          type: integer
+        outputMode:
+          type: string
+        createdAt:
+          type: string
+      required: [id, title, script, wordCount, outputMode, createdAt]
+
+    GeneratedScriptListResponse:
+      type: object
+      properties:
+        scripts:
+          type: array
+          items:
+            $ref: "#/components/schemas/GeneratedScript"
+      required: [scripts]
+
+    DashboardStats:
+      type: object
+      properties:
+        totalVideos:
+          type: integer
+        totalCompetitors:
+          type: integer
+        totalTitleAnalyses:
+          type: integer
+        totalScriptAnalyses:
+          type: integer
+        totalGeneratedScripts:
+          type: integer
+        recentActivity:
+          type: array
+          items:
+            $ref: "#/components/schemas/ActivityItem"
+      required: [totalVideos, totalCompetitors, totalTitleAnalyses, totalScriptAnalyses, totalGeneratedScripts, recentActivity]
+
+    ActivityItem:
+      type: object
+      properties:
+        type:
+          type: string
+        label:
+          type: string
+        createdAt:
+          type: string
+      required: [type, label, createdAt]

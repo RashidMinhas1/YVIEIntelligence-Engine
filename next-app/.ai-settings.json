@@ -1,0 +1,39 @@
+{
+  "activeProvider": "openrouter",
+  "providers": {
+    "openai": {
+      "apiKey": "",
+      "baseUrl": "",
+      "model": "",
+      "isEnabled": false,
+      "apiKeys": []
+    },
+    "gemini": {
+      "apiKey": "v1:Lc1A65FQgAQO+t/cZwsCCD3s/Ws6meThIbD+cU4Qy/oudvBIbkD5mVeUA4582RJqYwjsT48RGKpWJixS8+cnIQ==:pNxLHStVyz99OPd8B/9M2w==:QU9pcZ10KNxWFud+xMpp+A==:r1Tr7mnrsn3178VF53qM01xjI9JXOiQEffsy0DrWIGgQ6+EgSJey",
+      "baseUrl": "",
+      "model": "gemini-2.5-pro",
+      "apiKeys": [
+        "v1:Lc1A65FQgAQO+t/cZwsCCD3s/Ws6meThIbD+cU4Qy/oudvBIbkD5mVeUA4582RJqYwjsT48RGKpWJixS8+cnIQ==:pNxLHStVyz99OPd8B/9M2w==:QU9pcZ10KNxWFud+xMpp+A==:r1Tr7mnrsn3178VF53qM01xjI9JXOiQEffsy0DrWIGgQ6+EgSJey"
+      ],
+      "isEnabled": false
+    },
+    "openrouter": {
+      "apiKey": "v1:rR46fNUc66Wi5C7Mupb+pmHaGGduaZGrqPt/VmvBaxGLc/QlDWkNNtyATLYwqoSIjy10gABrPClfRHPeIVdorw==:yjJ/ADC9l48m5vOj5Rzzfg==:Q/gluOwvK0lIBQve2fKCUg==:+74Voya+uz4GxIG+AYdh7bdtyh35N0Hu/c5T6rMC41G0ntNGSk0o64GtTuMH9AWdGBOvBwRYiVuFjtyGSMNRiEpmJXm/WHuLug==",
+      "baseUrl": "",
+      "model": "nvidia/nemotron-nano-12b-v2-vl:free",
+      "apiKeys": [
+        "v1:rR46fNUc66Wi5C7Mupb+pmHaGGduaZGrqPt/VmvBaxGLc/QlDWkNNtyATLYwqoSIjy10gABrPClfRHPeIVdorw==:yjJ/ADC9l48m5vOj5Rzzfg==:Q/gluOwvK0lIBQve2fKCUg==:+74Voya+uz4GxIG+AYdh7bdtyh35N0Hu/c5T6rMC41G0ntNGSk0o64GtTuMH9AWdGBOvBwRYiVuFjtyGSMNRiEpmJXm/WHuLug=="
+      ]
+    }
+  },
+  "features": {
+    "wizard": {
+      "provider": "openrouter",
+      "model": "meta-llama/llama-3.1-405b-instruct",
+      "apiKeys": [
+        "v1:TPjhyrAjM0sQ37PT0ydmxVskdr6hXA6fH2VW9TVAky4yGIde4bqDpQmMbnXS5dr+F4LoRVdlj9pOxbCoNCuAQQ==:EMdUT++kyqEQB7Rb5x6ChA==:e4I/BWOxOu3ZGM8QldXUlw==:u6FWUau5G0M7Xq9xVF/sPWtUKcZZddpPCTld3SZLBf3vrMbo2ac9GICgMEImum1pgKhQWfTKqyaaCrr3mFSo5su7opNnqZZyPg=="
+      ],
+      "isLocalOverrideEnabled": true
+    }
+  }
+}

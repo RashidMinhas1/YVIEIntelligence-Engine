@@ -1,0 +1,158 @@
+Got it — you want the SaaS to support **dual output formats**:
+
+1. 📄 Structured “User Docs” format (clean, report-style)
+2. 🧾 Plain text format (copy/paste friendly)
+
+Below is your **upgraded Replit one-click template addition**. Just merge this into the previous prompt.
+
+---
+
+# ⚡ UPGRADE: OUTPUT FORMAT SYSTEM (IMPORTANT)
+
+Add a global feature across the entire app:
+
+## 🎛️ Output Mode Switch
+
+Every AI result must have a toggle:
+
+### UI Toggle:
+
+* 📄 **Docs Mode (Structured)**
+* 🧾 **Plain Text Mode**
+
+---
+
+# 📄 1. DOCS MODE (STRUCTURED OUTPUT)
+
+When user selects “Docs Mode”, all AI responses must return:
+
+### Format:
+
+```md
+# Title / Heading
+
+## Summary
+- clear breakdown
+
+## Insights
+- bullet points
+
+## Analysis
+- structured sections
+
+## Keywords
+- primary:
+- secondary:
+
+## Strategy
+- actionable points
+
+## Final Output
+- formatted result
+```
+
+### Rules:
+
+* clean headings
+* professional report style
+* good for saving/exporting
+* readable like Notion/Google Docs
+
+---
+
+# 🧾 2. PLAIN TEXT MODE
+
+When user selects “Plain Text Mode”:
+
+### Format:
+
+* no markdown
+* no headings
+* simple paragraphs
+* bullet points only if needed
+
+Example:
+
+```
+This title works because it creates curiosity and urgency. The keyword placement is strong at the start which increases CTR. The emotional trigger is "shocking" which improves engagement...
+```
+
+---
+
+# 🔁 APPLY TO ALL AI MODULES
+
+This dual format must be applied to:
+
+## 1. Title Analysis
+
+## 2. Title Generation
+
+## 3. Script Analysis
+
+## 4. Script Generation
+
+---
+
+# 🧠 BACKEND UPDATE (IMPORTANT LOGIC)
+
+Add parameter:
+
+```js
+outputMode: "docs" | "text"
+```
+
+Every OpenAI request must include:
+
+### SYSTEM RULE:
+
+If outputMode = docs → return structured markdown report
+If outputMode = text → return plain conversational text only
+
+---
+
+# 🖥️ FRONTEND UPDATE
+
+Add toggle UI on every result page:
+
+### UI Component:
+
+* Switch button:
+
+  * 📄 Docs Mode
+  * 🧾 Plain Text Mode
+
+### Behavior:
+
+* instantly re-renders output format
+* no need to re-run AI (optional optimization: re-run allowed button)
+
+---
+
+# 🚀 BONUS FEATURE (HIGH VALUE)
+
+Add:
+
+## 📥 Export Options
+
+* Download as .txt (plain mode)
+* Download as .md (docs mode)
+* Copy to clipboard
+
+---
+
+# ⚡ FINAL RESULT
+
+Now your SaaS becomes:
+
+✔ AI YouTube strategist
+✔ Title & script engine
+✔ Competitor analyzer
+✔ AND dual-format document generator
+
+---
+
+If you want next upgrade, I can build:
+
+* 🔥 real working UI design (Figma-level SaaS dashboard)
+* 🔥 or full Replit auto-generated codebase
+* 🔥 or add “viral score prediction system (0–100 CTR score)”

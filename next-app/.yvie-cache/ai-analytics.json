@@ -1,0 +1,35 @@
+{
+  "totalRequests": 360,
+  "successCount": 126,
+  "failureCount": 234,
+  "totalTokens": 78157,
+  "totalCost": 0.07815699999999998,
+  "totalLatencyMs": 1114437,
+  "cacheHits": 0,
+  "providerUsage": {
+    "openrouter": 360
+  },
+  "modelUsage": {
+    "openrouter/free": 21,
+    "tencent/hy3:free": 7,
+    "poolside/laguna-xs-2.1:free": 51,
+    "cohere/north-mini-code:free": 38,
+    "nvidia/nemotron-3.5-content-safety:free": 10,
+    "nvidia/nemotron-3-ultra-550b-a55b:free": 8,
+    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": 7,
+    "poolside/laguna-m.1:free": 7,
+    "google/gemma-4-26b-a4b-it:free": 5,
+    "google/gemma-4-31b-it:free": 3,
+    "google/lyria-3-pro-preview": 1,
+    "poolside/laguna-s-2.1:free": 70,
+    "openai/gpt-oss-20b:free": 46,
+    "nvidia/nemotron-nano-12b-v2-vl:free": 59,
+    "inclusionai/ling-3.0-flash:free": 27
+  },
+  "errorsByType": {
+    "unknown": 104,
+    "rate_limit": 37,
+    "quota_exhausted": 93
+  },
+  "lastUpdated": 1784870288877
+}

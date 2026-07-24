@@ -1,0 +1,224 @@
+YouTube Viral Intelligence Engine (YVIE SaaS)
+
+⚙️ REPLIT AI MASTER PROMPT (PASTE THIS)
+
+Build a full-stack SaaS web application called YouTube Viral Intelligence Engine.
+
+It must be production-ready and deployable on Replit with one click.
+
+🧱 STACK REQUIREMENTS
+Frontend
+React (Vite)
+TailwindCSS
+Axios
+Modern SaaS UI (dark mode default)
+Backend
+Node.js + Express
+CORS enabled
+dotenv support
+Database
+SQLite (simple, file-based, Replit friendly)
+AI
+OpenAI API integration (GPT-4 or GPT-5 compatible endpoint)
+🚀 APP FUNCTIONALITY (CORE FEATURES)
+1. Competitor Video Fetch System
+
+User inputs:
+
+2–3 YouTube competitor channels (name or URL)
+
+System:
+
+fetches latest 10 videos per channel (use YouTube Data API or mock fallback data if API key missing)
+
+Store:
+
+title
+views
+url
+2. Viral Title Analyzer Engine
+
+User pastes:
+
+21 video titles (or auto-loaded)
+
+AI must analyze:
+
+Output:
+Title structure patterns
+Hook psychology
+Keyword strategy (primary + secondary)
+CTR triggers
+Emotional words
+Format templates
+Average length patterns
+
+Return structured JSON.
+
+3. Title Generator Engine
+
+User clicks:
+👉 “Generate Viral Titles”
+
+AI generates:
+
+5 optimized titles
+same niche format
+improved CTR
+keyword positioning preserved
+4. Script Analyzer Engine
+
+User pastes competitor script.
+
+AI extracts:
+
+Tone
+Mood
+Hook structure (first 200–350 words)
+Retention strategy
+Engagement loops
+pacing style
+
+Output:
+
+structured breakdown
+reusable script formula
+5. Script Generator Engine
+
+User selects:
+
+a generated title
+
+AI generates:
+
+full YouTube script
+faceless channel optimized
+high retention hooks every 15–25 seconds
+storytelling + curiosity loops
+SEO optimized phrasing
+🌐 FRONTEND PAGES (REACT)
+/dashboard
+competitor input form
+fetch videos button
+video table UI
+/titles
+paste 21 titles
+analyze button
+results panel (JSON viewer)
+/generate-titles
+AI-generated insights
+“Generate 5 Titles” button
+output cards
+/script-analyzer
+script input box
+analyze button
+structured breakdown UI
+/script-generator
+title selector dropdown
+generate script button
+full script output viewer
+🎨 UI DESIGN RULES
+SaaS dashboard layout
+dark theme default
+gradient buttons
+glassmorphism cards
+modern spacing (Tailwind)
+responsive mobile-first
+clean typography (Inter font)
+🔌 BACKEND API ROUTES
+POST /api/videos/fetch
+
+Input:
+
+competitor list
+
+Output:
+
+videos array
+POST /api/titles/analyze
+
+Input:
+
+21 titles
+
+Output:
+
+full AI analysis JSON
+POST /api/titles/generate
+
+Input:
+
+analysis result
+
+Output:
+
+5 viral titles
+POST /api/script/analyze
+
+Input:
+
+script text
+
+Output:
+
+tone, mood, hook breakdown
+POST /api/script/generate
+
+Input:
+
+title + analysis
+
+Output:
+
+full viral script
+🤖 AI SYSTEM PROMPTS (IMPORTANT)
+
+Use this base system role for ALL OpenAI calls:
+
+“You are a world-class YouTube growth strategist specializing in faceless channels that generate millions of views. You understand CTR psychology, retention engineering, and viral content structure deeply.”
+
+🗄️ DATABASE SCHEMA
+videos
+id
+competitor
+title
+views
+url
+title_analysis
+id
+titles
+insights_json
+scripts
+id
+title
+script
+analysis_json
+⚡ SMART FEATURES
+
+Add:
+
+loading skeletons
+copy-to-clipboard buttons
+export script as .txt
+save history
+“regenerate” buttons for AI outputs
+🚀 DEPLOYMENT RULE
+
+Make sure the project:
+
+runs with npm install
+starts with npm run dev
+backend runs on Express port 3000
+frontend runs on Vite port 5173
+includes .env.example
+🎯 FINAL OUTPUT
+
+A fully working SaaS:
+
+competitor intelligence system
+viral title analyzer
+AI title generator
+script analyzer
+script generator
+clean UI dashboard
+ready to deploy on Replit with one click
